@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>MMS樞紐分析平台</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="PrimeReact Babylon Layout"/>
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+	<link id="theme-css" rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/theme/theme-blue.css">
+	<link id="layout-css" rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/layout/css/layout-blue.css">
+	<!-- leaflet js -->
+	<!-- index.html -->
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.11.1/mapbox-gl.css' rel='stylesheet' />
+
+
+
+</head>
+<body>
+<noscript>
+	You need to enable JavaScript to run this app.
+</noscript>
+<div id="root">
+	<div class="loader-screen">
+		<div class="loader">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+			<div class="bar4"></div>
+			<div class="bar5"></div>
+			<div class="bar6"></div>
+		</div>
+	</div>
+	<div id="map" style="width:100%;z-index:0;height:800px">						
+	</div>
+</div>
+</body>
+<script>
+	
+	var tiles = L.tileLayer('https://wmts.nlsc.gov.tw/wmts/EMAP/default/GoogleMapsCompatible/{z}/{y}/{x}.jpg', {
+			maxZoom: 20,
+			minZoom: 5,
+		attribution: '&copy; MMS contributors, Points &copy 2022'
+			}),
+		latlng;
+
+		latlng = L.latLng(23.5896715,121.4054274);
+		let mIds = [];
+		
+	
+	var map = L.map('map', {center: latlng, zoom: 7, layers: [tiles]});
+</script>
+</html>

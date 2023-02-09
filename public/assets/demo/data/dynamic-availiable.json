@@ -1,0 +1,137 @@
+{
+    "data": [
+        {
+            "carnum": "35BCK10612",
+            "status": "unqualified",
+            "statusdesc": "在段待修",
+            "worktype": "二級檢查",
+            "actstart": "2022/08/01",          
+            "actfinish": "2022/08/01",
+            "changeby": "許O逸",
+            "changedate": "2022/08/01 18:23",
+            "deptid": "MGY00",
+            "deptdesc": "七堵機務段"
+        },{
+          "carnum": "35PPC1415",
+          "status": "unqualified",
+          "statusdesc": "在廠停用",
+          "worktype": "",
+          "actstart": "",          
+          "actfinish": "",
+          "changeby": "許O逸",
+          "changedate": "2022/08/01 18:25",
+          "deptid": "MGY00",
+          "deptdesc": "七堵機務段"
+      },{
+          "carnum": "35PPT1040",
+          "status": "02",
+          "statusdesc": "在廠待料",
+          "worktype": "",
+          "actstart": "",          
+          "actfinish": "",
+          "changeby": "許O逸",
+          "changedate": "2022/08/01 19:23",
+          "deptid": "MGY00",
+          "deptdesc": "七堵機務段"
+      },{
+          "carnum": "E1025",
+          "status": "54",
+          "statusdesc": "在段待修",
+          "worktype": "2A",
+          "actstart": "2022/08/01",          
+          "actfinish": "2022/08/05",
+          "changeby": "許O逸",
+          "changedate": "2022/08/03 08:23",
+          "deptid": "MGY00",
+          "deptdesc": "七堵機務段"
+      },{
+        "carnum": "E1035",
+        "status": "54",
+        "statusdesc": "在段待修",
+        "worktype": "2A",
+        "actstart": "2022/08/01",          
+        "actfinish": "2022/08/05",
+        "changeby": "許O逸",
+        "changedate": "2022/08/03 08:23",
+        "deptid": "MGY00",
+        "deptdesc": "七堵機務段"
+    },{
+        "carnum": "E1034",
+        "status": "54",
+        "statusdesc": "在段待修",
+        "worktype": "2A",
+        "actstart": "2022/08/01",          
+        "actfinish": "2022/08/05",
+        "changeby": "許O逸",
+        "changedate": "2022/08/03 08:23",
+        "deptid": "MGY00",
+        "deptdesc": "七堵機務段"
+    },{
+        "carnum": "E1033",
+        "status": "54",
+        "statusdesc": "在段待修",
+        "worktype": "2A",
+        "actstart": "2022/08/01",          
+        "actfinish": "2022/08/05",
+        "changeby": "許O逸",
+        "changedate": "2022/08/03 08:23",
+        "deptid": "MGY00",
+        "deptdesc": "七堵機務段"
+    },{
+        "carnum": "E1032",
+        "status": "54",
+        "statusdesc": "在段待修",
+        "worktype": "2A",
+        "actstart": "2022/08/01",          
+        "actfinish": "2022/08/05",
+        "changeby": "許O逸",
+        "changedate": "2022/08/03 08:23",
+        "deptid": "MGY00",
+        "deptdesc": "七堵機務段"
+    },{
+        "carnum": "E1031",
+        "status": "52",
+        "statusdesc": "在段待修",
+        "worktype": "2A",
+        "actstart": "2022/08/01",          
+        "actfinish": "2022/08/05",
+        "changeby": "許O逸",
+        "changedate": "2022/08/03 08:23",
+        "deptid": "MGY00",
+        "deptdesc": "七堵機務段"
+    },{
+        "carnum": "E1055",
+        "status": "54",
+        "statusdesc": "在段待修",
+        "worktype": "2A",
+        "actstart": "2022/08/01",          
+        "actfinish": "2022/08/05",
+        "changeby": "許O逸",
+        "changedate": "2022/08/03 08:23",
+        "deptid": "MGY00",
+        "deptdesc": "七堵機務段"
+    },{
+        "carnum": "E1051",
+        "status": "54",
+        "statusdesc": "在段待修",
+        "worktype": "2A",
+        "actstart": "2022/08/01",          
+        "actfinish": "2022/08/05",
+        "changeby": "許O逸",
+        "changedate": "2022/08/03 08:23",
+        "deptid": "MGY00",
+        "deptdesc": "七堵機務段"
+    },{
+        "carnum": "E1007",
+        "status": "54",
+        "statusdesc": "在段待修",
+        "worktype": "2A",
+        "actstart": "2022/08/01",          
+        "actfinish": "2022/08/05",
+        "changeby": "許O逸",
+        "changedate": "2022/08/03 08:23",
+        "deptid": "MGY00",
+        "deptdesc": "七堵機務段"
+    }
+    ]
+  }
