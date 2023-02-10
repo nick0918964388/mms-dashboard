@@ -41,6 +41,14 @@ const Pivlot = props => {
                 setvals();
                 setcolTotalName('Totals');
             }
+            else if(props.charttype==="tym-g"){
+                customerService.getCustomersTym(props.type).then(data => setdata(data));  
+                setcols();
+                setaggregatorName();
+                setvals();
+                setvals();
+                setcolTotalName('Totals');
+            }
             else if(props.charttype==="tym-wocloserate"){
                 customerService.getCustomersTym_wocloserate(props.type).then(data => setdata(data));
                 setrows(["工單類型","單位"]);

@@ -77,6 +77,7 @@ const App = () => {
         {
             label: '倉儲', icon: 'pi pi-fw pi-chart-bar',
             items: [
+                { label: 'test', icon: 'pi pi-fw pi-chart-bar', to: '/test' },
                 { label: '超過1年呆料清單統計', icon: 'pi pi-fw pi-chart-bar', to: '/m01' },
                 { label: '歷史庫存金額統計', icon: 'pi pi-fw pi-chart-bar', to: '/m02' },
                 { label: '歷史庫存數量統計', icon: 'pi pi-fw pi-chart-bar', to: '/m03' },
@@ -111,6 +112,7 @@ const App = () => {
 
     const routers = [
         { path: '/', component: Dashboard, exact: true, meta: { breadcrumb: [{ parent: 'Dashboard', label: 'Dashboard' }] } },        
+        { path: '/test', component: TableDemo, meta: { breadcrumb: [{ parent: 'UI Kit', label: '超過1年呆料清單統計' }] } },
         { path: '/m01', component: TableDemo,charttype:'m01', meta: { breadcrumb: [{ parent: 'UI Kit', label: '超過1年呆料清單統計' }] } },
         { path: '/m02', component: TableDemo,charttype:'m01', meta: { breadcrumb: [{ parent: 'UI Kit', label: '歷史庫存金額統計' }] } },
         { path: '/m03', component: TableDemo,charttype:'m01', meta: { breadcrumb: [{ parent: 'UI Kit', label: '歷史庫存數量統計' }] } },
@@ -354,8 +356,8 @@ const App = () => {
                     {
                         routers.map((router, index) => {
                             if (router.exact) {
-                                // return <Route key={`router${index}`} path={router.path} exact component={router.component} />
-                                return <Route key={`router${index}`} path={router.path} exact render={(props) => <Pivlot charttype={router.charttype} {...props} /> } />
+                                return <Route key={`router${index}`} path={router.path} exact component={router.component} />
+                                // return <Route key={`router${index}`} path={router.path} exact render={(props) => <Pivlot charttype={router.charttype} {...props} /> } />
                             }
 
                             return <Route key={`router${index}`} path={router.path} component={router.component} />
