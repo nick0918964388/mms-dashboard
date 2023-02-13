@@ -5,6 +5,7 @@ import CustomerService from '../service/CustomerService';
 import ProductService from '../service/ProductService';
 import Pivlot from './Pivlot';
 import { Dropdown } from 'primereact/dropdown';
+import Pivlot3 from './Pivlot3';
 
 const TableDemo = () => {
     const [customers1, setCustomers1] = useState(null);
@@ -83,7 +84,8 @@ const TableDemo = () => {
                             <label htmlFor="state">年度 : </label>
                             <Dropdown id="state" value={dropdownItem} onChange={(e) => setDropdownItem(e.value)} options={dropdownItems} optionLabel="name" placeholder="選擇年度"></Dropdown>
                         </div>
-                    <Pivlot type={dropdownItem} charttype={"tym-g"}/>
+                    {/* <Pivlot type={dropdownItem} charttype={"tym-wocloserate"}/> */}
+                    <Pivlot3 />
                 </div> 
                 <div className="card">
                     

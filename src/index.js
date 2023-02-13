@@ -3,7 +3,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter } from 'react-router-dom'
 import AppWrapper from './AppWrapper';
+import { registerLicense } from '@syncfusion/ej2-base';
 //import * as serviceWorker from './serviceWorker';
+
+// Registering Syncfusion license key
+registerLicense('ORg4AjUWIQA/Gnt2VVhkQlFadVdJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxQdkdiWn9edXVXR2RYVUY=');
 
 ReactDOM.render(
 	<HashRouter>
