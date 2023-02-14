@@ -102,7 +102,7 @@ let dataSourceSettings = {
 
 
 //
-let pivotAggregateTypes = ['Sum', 'Min', 'DistinctCount', 'Avg', 'Product'];
+let pivotAggregateTypes = ['Sum', 'Min', 'Count', 'Avg',];
 
 //
 
