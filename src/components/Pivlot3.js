@@ -88,22 +88,29 @@ let UniversityData = dataSource1.data;
 let dataSourceSettings = {
     enableSorting: true,
     columns: [
-        { name: '年度', caption: '年度' },{ name: '月', caption: '月' },{ name: '日', caption: '日' }
-    ],    
-    rows: [{ name: '單位', caption: '單位', expandAll: true, allowDragAndDrop: false }],    
+        { name: '年度', caption: '年度' }, { name: '月', caption: '月' }, { name: '日', caption: '日' }
+    ],
+    rows: [{ name: '單位', caption: '單位', expandAll: true, allowDragAndDrop: false }],
     dataSource: UniversityData,
     expandAll: false,
-    values: [{ name: '已結案數', caption: '已結案數' }],        
+    values: [{ name: '已結案數', caption: '已結案數' }, { name: '總結案數', caption: '總結案數' }],
     showHeaderWhenEmpty: false,
     emptyCellsTextContent: '-',
-    excludeFields: ['link', 'logo']
+    excludeFields: ['link', 'logo'],
+
 };
+
+
+//
+let pivotAggregateTypes = ['DistinctCount', 'Avg', 'Product'];
+
+//
 
 
 // see documentation for supported input formats
 //const data = [['attribute', 'attribute2'], ['value1', 'value2']];
 
-const Pivlot3 = props => { 
+const Pivlot3 = props => {
     let pivotObj;
     let toolbarOptions = ['New', 'Save', 'SaveAs', 'Rename', 'Remove', 'Load',
         'Grid', 'Chart', 'Export', 'SubTotal', 'GrandTotal', 'Formatting', 'FieldList'];
@@ -113,7 +120,7 @@ const Pivlot3 = props => {
                 args.targetCell.classList.remove(args.cellInfo.cssClass);
                 args.cellInfo.style = undefined;
             }
-        }        
+        }
         return '';
     }
     function hyperlinkCellClick(args) {
@@ -190,9 +197,11 @@ const Pivlot3 = props => {
                 }
             }
         }
-        reportsCollection.map(function (item) { if (args.reportName === item.reportName) {
-            item.reportName = args.rename;
-        } });
+        reportsCollection.map(function (item) {
+            if (args.reportName === item.reportName) {
+                item.reportName = args.rename;
+            }
+        });
         if (localStorage.pivotviewReports && localStorage.pivotviewReports !== "") {
             localStorage.pivotviewReports = JSON.stringify(reportsCollection);
         }
@@ -218,24 +227,29 @@ const Pivlot3 = props => {
         pivotObj.chartSettings.chartSeries.legendShape = pivotObj.chartSettings.chartSeries.type === 'Polar' ? 'Rectangle' : 'SeriesType';
     }
     return (<div className='control-pane'>
-            <meta name="referrer" content="never"></meta>
-            <div className='control-section' id='pivot-table-section' style={{ overflow: 'initial' }}>
-                <div>
-                    <PivotViewComponent id='PivotView' ref={(scope) => { pivotObj = scope; }} dataSourceSettings={dataSourceSettings} width={'100%'} height={'600'} showFieldList={true} exportAllPages={false} maxNodeLimitInMemberEditor={50} cellTemplate={cellTemplate.bind(this)} showGroupingBar={true} allowGrouping={true} enableVirtualization={true} enableValueSorting={true} allowDeferLayoutUpdate={true} allowDrillThrough={true} gridSettings={{
-            columnWidth: 120, allowSelection: true, rowHeight: 36,
-            selectionSettings: { mode: 'Cell', type: 'Multiple', cellSelectionMode: 'Box' }
-        }} allowExcelExport={true} allowNumberFormatting={true} allowConditionalFormatting={true} allowPdfExport={true} showToolbar={true} allowCalculatedField={true} displayOption={{ view: 'Both' }} toolbar={toolbarOptions} newReport={newReport.bind(this)} renameReport={renameReport.bind(this)} removeReport={removeReport.bind(this)} loadReport={loadReport.bind(this)} fetchReport={fetchReport.bind(this)} saveReport={saveReport.bind(this)} toolbarRender={beforeToolbarRender.bind(this)} chartSettings={{ title: 'Top Universities Analysis', load: chartOnLoad.bind(this) }} chartSeriesCreated={chartSeriesCreated.bind(this)}>
-                        <Inject services={[FieldList, CalculatedField, Toolbar, PDFExport, ExcelExport, ConditionalFormatting, NumberFormatting, GroupingBar, Grouping, VirtualScroll, DrillThrough]}/>
-                    </PivotViewComponent>
-                </div>
-                <div className='urllink'>
-                    Source:
-                    <a href="https://www.topuniversities.com/university-rankings?utm_source=topnav" target="_blank">QS World
-                        University Rankings</a>
-                </div>
-            </div>
+        <meta name="referrer" content="never"></meta>
+        <div className='control-section' id='pivot-table-section' style={{ overflow: 'initial' }}>
+            <div>
+                <PivotViewComponent id='PivotView' ref={(scope) => { pivotObj = scope; }} dataSourceSettings={dataSourceSettings} width={'100%'} height={'600'} showFieldList={true} exportAllPages={false} maxNodeLimitInMemberEditor={50} cellTemplate={cellTemplate.bind(this)} showGroupingBar={true} allowGrouping={true} enableVirtualization={true} enableValueSorting={true} allowDeferLayoutUpdate={true} allowDrillThrough={true} gridSettings={{
+                    columnWidth: 120, allowSelection: true, rowHeight: 36,
+                    selectionSettings: { mode: 'Cell', type: 'Multiple', cellSelectionMode: 'Box' }
 
-        </div>);
+                }} allowExcelExport={true} allowNumberFormatting={true} allowConditionalFormatting={true} allowPdfExport={true} showToolbar={true} allowCalculatedField={true} displayOption={{ view: 'Both' }} toolbar={toolbarOptions} newReport={newReport.bind(this)} renameReport={renameReport.bind(this)} removeReport={removeReport.bind(this)} loadReport={loadReport.bind(this)} fetchReport={fetchReport.bind(this)} saveReport={saveReport.bind(this)} toolbarRender={beforeToolbarRender.bind(this)} chartSettings={{ title: 'Top Universities Analysis', load: chartOnLoad.bind(this) }} chartSeriesCreated={chartSeriesCreated.bind(this)}
+                    // Delete some aggregateTypes
+                    aggregateTypes={pivotAggregateTypes}
+
+                >
+                    <Inject services={[FieldList, CalculatedField, Toolbar, PDFExport, ExcelExport, ConditionalFormatting, NumberFormatting, GroupingBar, Grouping, VirtualScroll, DrillThrough]} />
+                </PivotViewComponent>
+            </div>
+            <div className='urllink'>
+                Source:
+                <a href="https://www.topuniversities.com/university-rankings?utm_source=topnav" target="_blank">QS World
+                    University Rankings</a>
+            </div>
+        </div>
+
+    </div>);
 
 }
 
