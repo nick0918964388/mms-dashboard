@@ -102,7 +102,7 @@ let dataSourceSettings = {
 
 
 //
-let pivotAggregateTypes = ['DistinctCount', 'Avg', 'Product'];
+let pivotAggregateTypes = ['Sum', 'Min', 'DistinctCount', 'Avg', 'Product'];
 
 //
 
@@ -235,7 +235,7 @@ const Pivlot3 = props => {
                     selectionSettings: { mode: 'Cell', type: 'Multiple', cellSelectionMode: 'Box' }
 
                 }} allowExcelExport={true} allowNumberFormatting={true} allowConditionalFormatting={true} allowPdfExport={true} showToolbar={true} allowCalculatedField={true} displayOption={{ view: 'Both' }} toolbar={toolbarOptions} newReport={newReport.bind(this)} renameReport={renameReport.bind(this)} removeReport={removeReport.bind(this)} loadReport={loadReport.bind(this)} fetchReport={fetchReport.bind(this)} saveReport={saveReport.bind(this)} toolbarRender={beforeToolbarRender.bind(this)} chartSettings={{ title: 'Top Universities Analysis', load: chartOnLoad.bind(this) }} chartSeriesCreated={chartSeriesCreated.bind(this)}
-                    // Delete some aggregateTypes
+                    // Delete aggregate
                     aggregateTypes={pivotAggregateTypes}
 
                 >
