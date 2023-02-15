@@ -78,27 +78,27 @@ const TableDemo = () => {
     return (
         <div className="grid table-demo">
             <div className="col-12">
-                <div className="card">                    
-                <h5 className="centerText">超過1年呆料分析</h5>
-                <div className="field col-12 md:col-3">
-                            <label htmlFor="state">年度 : </label>
-                            <Dropdown id="state" value={dropdownItem} onChange={(e) => setDropdownItem(e.value)} options={dropdownItems} optionLabel="name" placeholder="選擇年度"></Dropdown>
-                        </div>
-                    {/* <Pivlot type={dropdownItem} charttype={"tym-wocloserate"}/> */}
-                    <Pivlot3 />
-                </div> 
                 <div className="card">
-                    
-                {/* <h5 className="centerText">工單結案率統計</h5> */}
-                <div className="field col-12 md:col-3">
-                            {/* <label htmlFor="state">年度 : </label>
+                    <h5 className="centerText">超過1年呆料分析</h5>
+                    <div className="field col-12 md:col-3">
+                        <label htmlFor="state">年度 : </label>
+                        <Dropdown id="state" value={dropdownItem} onChange={(e) => setDropdownItem(e.value)} options={dropdownItems} optionLabel="name" placeholder="選擇年度"></Dropdown>
+                    </div>
+                    <Pivlot type={dropdownItem} charttype={"tym-wocloserate"} />
+                    {/* <Pivlot3 /> */}
+                </div>
+                <div className="card">
+
+                    {/* <h5 className="centerText">工單結案率統計</h5> */}
+                    <div className="field col-12 md:col-3">
+                        {/* <label htmlFor="state">年度 : </label>
                             <Dropdown id="state" value={dropdownItem} onChange={(e) => setDropdownItem(e.value)} options={dropdownItems} optionLabel="name" placeholder="選擇年度"></Dropdown> */}
-                        </div>
+                    </div>
                     {/* <Pivlot type={dropdownItem} charttype={"tym-wocloserate"}/> */}
-                </div>  
-               
-                    
-               
+                </div>
+
+
+
                 {/* <div className="card">
 
                     <h5>CM工單(2022年度)</h5>
